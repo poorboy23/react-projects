@@ -1,19 +1,23 @@
-import { useState } from 'react'
-
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [username, setUsername] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(username);
+  }
 
   return (
-    <>
-      
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
-  )
+    <form onSubmit={handleSubmit}>
+      Username:
+      <input
+        type='text'
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <button>Submit</button>
+    </form>
+  );
 }
-
 export default App

@@ -11,4 +11,5 @@ function Simplecomponent(){
     )
 
 }
+
 export default Simplecomponent
